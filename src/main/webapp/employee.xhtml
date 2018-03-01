@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:growl autoUpdate="true" showSummary="true" id="msg"></p:growl>
+            <p:panel >
+                <f:facet name="footer">
+                    <p:commandButton update="msg" actionListener="#{employeeManagedBean.save()}" value="Save!"></p:commandButton>
+                </f:facet>
+                <p:panelGrid id="panel" columns="2">
+                
+                    <p:outputLabel id="idemployee" for="idemployee">ID empleado</p:outputLabel>
+                <p:inputText id="idemployee" value="#{deparmentManagedBean.employee.idemployee}"></p:inputText>
+                <p:outputLabel for="name">Nombre empleado</p:outputLabel>
+                <p:inputText id="name" value="#{deparmentManagedBean.employee.name}"></p:inputText>
+                <p:outputLabel for="lastName">Segundo nombre empleado</p:outputLabel>
+                <p:inputText id="lastName" value="#{deparmentManagedBean.employee.lastName}"></p:inputText>
+                <p:outputLabel for="salary">Salario</p:outputLabel>
+                <p:inputText id="salary" value="#{deparmentManagedBean.employee.salary}"></p:inputText>
+            </p:panelGrid>
+                </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
